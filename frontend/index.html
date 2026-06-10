@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Price Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Product Price Analyzer</h1>
+    <p>Поиск товаров на Satu.kz и Ozon.kz с анализом цен, поставщиков, изображений и выгодных предложений.</p>
+
+    <div class="search-box">
+        <div class="row">
+            <input id="queryInput" type="text" placeholder="samsung galaxy, iphone, ручка parker, кресло офисное">
+
+            <label>
+                Сайт:
+                <select id="sourceInput">
+                    <option value="all">Satu.kz + Ozon.kz</option>
+                    <option value="satu">Только Satu.kz</option>
+                    <option value="ozon">Только Ozon.kz</option>
+                </select>
+            </label>
+
+            <label>
+                Категория:
+                <select id="categoryInput">
+                    <option value="auto">Автоопределение</option>
+                    <option value="smartphones">Смартфоны</option>
+                    <option value="stationery">Канцтовары</option>
+                    <option value="electronics">Электроника</option>
+                    <option value="home_appliances">Бытовая техника</option>
+                    <option value="furniture">Мебель</option>
+                    <option value="clothes">Одежда и обувь</option>
+                    <option value="general">Без категории</option>
+                </select>
+            </label>
+
+            <label>
+                Старт:
+                <input id="startPageInput" type="number" value="1" min="1">
+            </label>
+
+            <label>
+                Конец:
+                <input id="endPageInput" type="number" value="1" min="1" max="20">
+            </label>
+
+            <label>
+                Топ:
+                <input id="bestLimitInput" type="number" value="20" min="1" max="50">
+            </label>
+
+            <label>
+                Сортировка:
+                <select id="sortInput">
+                    <option value="score_desc">По выгодности</option>
+                    <option value="price_asc">Сначала дешёвые</option>
+                    <option value="price_desc">Сначала дорогие</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="row">
+            <label>
+                <input id="removeOutliersInput" type="checkbox" checked>
+                Убирать ценовые выбросы
+            </label>
+
+            <label>
+                <input id="strictTitleMatchInput" type="checkbox">
+                Строгий поиск по названию
+            </label>
+
+            <button id="searchButton" type="button">Найти</button>
+        </div>
+
+        <p class="small">
+            Смена сортировки работает мгновенно и не делает новый запрос. Новый поиск запускается только кнопкой
+            “Найти”.
+        </p>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
