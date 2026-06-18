@@ -110,6 +110,7 @@ async def analyze(
             "message": "All products were removed as price outliers"
         }
 
+
     price_stats = analyze_prices(products)
     suppliers = analyze_suppliers(products)
     ranked_products = rank_products(products, price_stats)
