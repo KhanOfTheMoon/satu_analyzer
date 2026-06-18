@@ -276,6 +276,7 @@ async def scrape_products(
     search_query = build_search_query(query, category)
 
     print("FAST GRAPHQL SCRAPER")
+    print("RAW QUERY:", repr(query))
     print("USER QUERY:", query)
     print("SELECTED CATEGORY:", selected_category)
     print("RESOLVED CATEGORY:", category)
